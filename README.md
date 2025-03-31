@@ -16,3 +16,6 @@
 
 bg-rgb(15, 81, 50);
 nav color: #cba590
+
+https://ivannakoniukh.odoo.com/
+https://nutakonuh.wixsite.com/mysite

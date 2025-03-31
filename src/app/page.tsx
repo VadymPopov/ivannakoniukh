@@ -1,3 +1,4 @@
+import AboutSection from "@/components/site/about-section";
 import HeroSection from "@/components/site/hero-section";
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <div className='min-h-screen font-[family-name:var(--font-geist-sans)] '>
       <main>
         <HeroSection />
+        <AboutSection />
       </main>
     </div>
   );
