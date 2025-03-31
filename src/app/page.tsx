@@ -1,5 +1,7 @@
 import AboutSection from "@/components/site/about-section";
 import HeroSection from "@/components/site/hero-section";
+import MyPathSection from "@/components/site/path-section";
+import ServicesSection from "@/components/site/services-section";
 
 export default function Home() {
   return (
@@ -7,6 +9,8 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
+        <MyPathSection />
+        <ServicesSection />
       </main>
     </div>
   );

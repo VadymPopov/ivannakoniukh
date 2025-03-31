@@ -5,7 +5,7 @@ import StepsCards from "./steps-cards";
 
 export default function AboutSection() {
   return (
-    <Section bgColor='bg-[#f0f5f3]'>
+    <Section bgColor='bg-white'>
       <div className='grid grid-cols-2 gap-10 mb-10'>
         <div className='flex justify-center items-center'>
           <Image
