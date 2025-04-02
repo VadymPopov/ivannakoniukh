@@ -9,6 +9,7 @@ import {
 } from "../ui/card";
 import { Section } from "../ui/section";
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import Title from "../ui/title";
 
 const events = [
   {
@@ -79,10 +80,12 @@ function EventsCards() {
 
 export default function EventsSection() {
   return (
-    <Section bgColor='bg-white'>
+    <Section bgColor='bg-gradient-to-r from-[#d9e8e5] to-[#a8cfc4]'>
       <div className='text-center max-w-2xl mx-auto'>
-        <p className='text-[#2997aa] text-lg'>Explore our upcoming</p>
-        <h2 className='text-4xl font-semibold text-black mt-2'>Events</h2>
+        <Title level='h3' className='text-[#2997aa] text-lg font-normal'>
+          Explore our upcoming
+        </Title>
+        <Title className='text-[#205b4f] mt-2 uppercase'>Events</Title>
       </div>
 
       <EventsCards />

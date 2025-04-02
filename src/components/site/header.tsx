@@ -21,7 +21,7 @@ const links = [
 
 export default function Header() {
   return (
-    <header className='py-4 px-8 flex justify-between items-center'>
+    <header className='py-4 px-8 flex justify-between items-center bg-[#0f5132]'>
       <div className='flex items-center gap-8'>
         <Image width={60} height={60} src='/logo.svg' alt='site-logo' />
         <Navbar />
@@ -42,8 +42,8 @@ export default function Header() {
           ))}
         </ul>
         <Button
-          variant='outline'
-          className='uppercase text-[#cba590] border py-2 px-4 text-xs font-semibold hover:bg-white hover:text-black'>
+          variant='ghost'
+          className='uppercase text-[#cba590] border border-[#cba590] py-2 px-4 text-xs font-semibold hover:bg-white hover:text-black'>
           Book now
         </Button>
         <LanguageSwitcherDropdown />

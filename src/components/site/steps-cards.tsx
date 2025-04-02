@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHandsHelping, FaHeart, FaFlask, FaSpa } from "react-icons/fa";
+import Title from "../ui/title";
 
 const cards = [
   {
@@ -36,24 +37,26 @@ export default function StepsCards() {
   return (
     <div>
       <div className='text-center max-w-2xl mx-auto'>
-        <p className='text-[#2997aa] text-lg'>
+        <Title level='h3' className='text-[#2997aa] text-lg font-normal'>
           Unlock the potential of your energy with my guidance
-        </p>
-        <h2 className='text-2xl font-semibold text-black mt-2'>
+        </Title>
+        <Title className='text-2xl text-[#205b4f] mt-2 uppercase'>
           Empowering Transformation Through Energy Healing
-        </h2>
+        </Title>
       </div>
 
       <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10'>
         {cards.map((card, index) => (
           <div
             key={index}
-            className='bg-gray-100 p-6 rounded-lg shadow-md text-center'>
-            <div className='mb-4 flex justify-center'>{card.icon}</div>
-            <h3 className='text-lg font-semibold text-[#205B4F]'>
+            className='bg-[#0f5132] p-6 rounded-lg shadow-md text-center'>
+            <div className='mb-4 flex justify-center text-[#cba590]'>
+              {card.icon}
+            </div>
+            <Title level='h3' className='text-lg text-white'>
               {card.title}
-            </h3>
-            <p className='text-black mt-2'>{card.description}</p>
+            </Title>
+            <p className='text-white mt-2'>{card.description}</p>
           </div>
         ))}
       </div>

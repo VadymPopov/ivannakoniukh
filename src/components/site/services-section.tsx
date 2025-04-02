@@ -9,6 +9,7 @@ import {
   CardAction,
 } from "../ui/card";
 import { Section } from "../ui/section";
+import Title from "../ui/title";
 
 const services = [
   {
@@ -95,8 +96,10 @@ export default function ServicesSection() {
   return (
     <Section bgColor='bg-white'>
       <div className='text-center max-w-2xl mx-auto'>
-        <p className='text-[#2997aa] text-lg'>Elevate Your Well-Being</p>
-        <h2 className='text-4xl font-semibold text-black mt-2'>Services</h2>
+        <Title level='h3' className='text-[#2997aa] text-lg font-normal'>
+          Elevate Your Well-Being
+        </Title>
+        <Title className='text-[#205b4f] mt-2 uppercase'>Services</Title>
       </div>
 
       <ServiceCards />

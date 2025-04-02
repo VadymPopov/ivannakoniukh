@@ -1,17 +1,18 @@
 import Image from "next/image";
 import { Section } from "../ui/section";
+import Title from "../ui/title";
 
 export default function MyPathSection() {
   return (
     <Section bgColor='bg-[#f0f5f3]'>
       <div className='grid grid-cols-2 gap-10'>
         <div>
-          <p className='text-[#2997aa] text-lg mb-5'>
+          <Title level='h3' className='text-[#2997aa] text-lg font-normal mb-5'>
             Are you ready to step into your power?
-          </p>
-          <h2 className='text-4xl font-semibold text-black mb-5'>My Path</h2>
+          </Title>
+          <Title className='text-[#205b4f] mb-5 uppercase'>My Path</Title>
           <div className='text-justify max-w-[520px] flex flex-col gap-2.5'>
-            <p>
+            <p className='text-[#704214]'>
               I know what it feels like to be at rock bottom—to question your
               purpose, to feel lost, unsure of how to change your life. I was
               there. I didn’t know where to turn until I discovered{" "}
@@ -20,7 +21,7 @@ export default function MyPathSection() {
               spending years in therapy, I realized true healing could happen in
               just one session.
             </p>
-            <p>
+            <p className='text-[#5a3f70]'>
               But my journey didn’t stop there. As I grew, I sensed deeper
               blockages—layers of emotions and patterns that still held me back.
               That’s when <span className='font-semibold'>energy work</span>{" "}
@@ -49,7 +50,7 @@ export default function MyPathSection() {
               foreign country—but has also helped my clients achieve rapid and
               lasting breakthroughs.
             </p>
-            <p>
+            <p className='text-[#205b4f]'>
               Healing doesn’t have to take years. You don’t have to stay stuck
               in old patterns. Even after just one session, you can feel a
               shift. Your{" "}

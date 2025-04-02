@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Section } from "../ui/section";
 import StepsCards from "./steps-cards";
+import Title from "../ui/title";
 
 export default function AboutSection() {
   return (
@@ -18,10 +19,10 @@ export default function AboutSection() {
         </div>
 
         <div>
-          <p className='text-[#2997aa] text-lg mb-5'>
+          <Title level='h3' className='text-[#2997aa] text-lg font-normal mb-5'>
             Start your journey to a better life today
-          </p>
-          <h2 className='text-4xl font-semibold text-black mb-5'>About me</h2>
+          </Title>
+          <Title className='text-[#205b4f] mb-5 uppercase'>About me</Title>
           <div className='text-justify max-w-[520px] flex flex-col gap-2.5'>
             <p>
               With over a decade of exploring psychology and more than two years

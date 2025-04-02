@@ -18,7 +18,7 @@ export default function HeroSection() {
           </p>
           <Button
             variant='outline'
-            className='uppercase text-[#cba590] border py-2 px-4 text-xs font-semibold hover:bg-white hover:text-black'>
+            className='uppercase text-black border py-2 px-4 text-xs font-semibold hover:bg-transparent hover:text-white'>
             Free Consultation
           </Button>
         </div>
