@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import {
@@ -10,6 +11,7 @@ import {
 } from "../ui/card";
 import { Section } from "../ui/section";
 import Title from "../ui/title";
+import { useRouter } from "next/navigation";
 
 const services = [
   {
@@ -18,6 +20,7 @@ const services = [
       "This session is designed to work on a subconscious level, helping you identify and heal the root causes of inner struggles.",
     price: "60 €",
     image: "/therapeutic.svg",
+    path: "/services/therapeutic-consultation",
   },
   {
     title: "Therapeutic Consultation Package (4 Sessions)",
@@ -25,6 +28,7 @@ const services = [
       "A package of 4 therapeutic consultations to deepen your healing journey.",
     price: "220 €",
     image: "/therapeutic-package.svg",
+    path: "/services/therapeutic-consultation-package",
   },
   {
     title: "Diagnostic Consultation",
@@ -32,6 +36,7 @@ const services = [
       "This free consultation allows you to discuss your concerns and gain clarity on the best therapeutic approach for you.",
     price: "0 €",
     image: "/diagnostic.svg",
+    path: "/services/diagnostic-consultation",
   },
   {
     title: "Tantric Breathwork Session (Group or Individual)",
@@ -39,6 +44,7 @@ const services = [
       "Tantric breathwork is a powerful practice that helps release emotional and physical blocks, restoring a deep sense of connection.",
     price: "40-60 €",
     image: "/tantric-breathwork.svg",
+    path: "/services/tantric-breathwork",
   },
   {
     title: "Breathwork Therapy Session (Group or Individual)",
@@ -46,6 +52,7 @@ const services = [
       "Breathwork is a scientifically backed practice that uses controlled breathing techniques to enhance mental clarity and emotional balance.",
     price: "40-60 €",
     image: "/breathwork-therapy.svg",
+    path: "/services/breathwork-therapy",
   },
   {
     title: "Sadhu Boards",
@@ -53,16 +60,25 @@ const services = [
       "Sadhu Boards is a powerful somatic and energetic practice designed to help you break free from limitations and release tension.",
     price: "80 €",
     image: "/sadhu-boards.svg",
+    path: "/services/sadhu-boards",
   },
 ];
 
 function ServiceCards() {
+  const router = useRouter();
+
+  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+  };
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6'>
       {services.map((service, index) => (
         <Card
           key={index}
-          className='overflow-hidden pt-0 flex flex-col justify-between h-full'>
+          className='overflow-hidden pt-0 flex flex-col justify-between h-full hover:cursor-pointer hover:shadow-2xl transition-colors'
+          onClick={() => {
+            router.replace(service.path);
+          }}>
           <div className=''>
             <Image
               src={service.image}
@@ -83,11 +99,8 @@ function ServiceCards() {
 
           <CardFooter className='flex justify-between'>
             <p className='text-lg font-bold mt-2'>{service.price}</p>
-            <CardAction className='flex gap-2'>
-              <Button variant='ghost' className='hidden sm:block'>
-                More Details
-              </Button>
-              <Button>Book Now</Button>
+            <CardAction>
+              <Button onClick={(e) => handleButtonClick(e)}>Book Now</Button>
             </CardAction>
           </CardFooter>
         </Card>
@@ -98,7 +111,7 @@ function ServiceCards() {
 
 export default function ServicesSection() {
   return (
-    <Section bgColor='bg-white'>
+    <Section bgColor='bg-white' id='services'>
       <div className='text-center max-w-2xl mx-auto'>
         <Title level='h3' className='text-[#2997aa] text-lg font-normal'>
           Elevate Your Well-Being

@@ -82,7 +82,7 @@ function EventsCards() {
 
 export default function EventsSection() {
   return (
-    <Section bgColor='bg-gradient-to-r from-[#d9e8e5] to-[#a8cfc4]'>
+    <Section bgColor='bg-gradient-to-r from-[#d9e8e5] to-[#a8cfc4]' id='events'>
       <div className='text-center max-w-2xl mx-auto'>
         <Title level='h3' className='text-[#2997aa] text-lg font-normal'>
           Explore our upcoming

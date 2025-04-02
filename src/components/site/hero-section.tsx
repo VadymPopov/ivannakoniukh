@@ -2,16 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { Section } from "../ui/section";
 import { Button } from "../ui/button";
+import Title from "../ui/title";
 
 export default function HeroSection() {
   return (
-    <Section bgColor='bg-[rgb(15,81,50)]'>
+    <Section bgColor='bg-[rgb(15,81,50)]' id='home'>
       <div className='flex justify-between md:flex-row flex-col-reverse'>
         <div className='flex flex-col items-start md:py-40 md:pl-40 py-20'>
           <p className='text-lg text-white mb-5 uppercase'>
             Welcome to the world of transformations
           </p>
-          <h1 className='text-7xl text-white pb-5'>Ivanna Koniukh</h1>
+          <Title level='h1' className='uppercase text-7xl text-white pb-5'>
+            Ivanna Koniukh
+          </Title>
           <p className='text-lg text-white max-w-md mb-5'>
             Your personal holistic therapist, committed to enhancing your
             well-being and transforming your life.

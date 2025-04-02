@@ -16,7 +16,10 @@ export default function Title({
   const Heading = level;
   return (
     <Heading
-      className={cn("text-4xl font-semibold tracking-wider", `${className}`)}>
+      className={cn(
+        "font-[family-name:var(--font-nunito)] text-4xl font-semibold tracking-wider",
+        `${className}`
+      )}>
       {children}
     </Heading>
   );

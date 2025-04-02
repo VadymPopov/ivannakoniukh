@@ -1,15 +1,13 @@
 Питання-завдання
 
+0. Оновити лого
 1. Треба ще одне може 2 фото для секцій про мене та мій шлях
 2. Форма може бути в кінці сторінки і при натисканні скрол до форми або відкриватись як модальне вікно (Підключити сторонню лібу)
-3. Форма як букінг чи просто зв'язок???
-4. Вся навігація це скрол до секції по айді
-5. Header has to be fixed on scroll down
-6. Events figure it out (google firebase)
-7. Card to new page with details
-8. https://www.figma.com/design/7ug18cvnbTyf964ShSNgyx/Yoga-Harmony---Website-Template-(Community)?node-id=1-2&t=W2Fokhai7HfYjcbX-0
-
-9. Оновити кольорови схему в globals.css
+3. Header has to be fixed on scroll down
+4. Events figure it out (google firebase)
+5. https://www.figma.com/design/7ug18cvnbTyf964ShSNgyx/Yoga-Harmony---Website-Template-(Community)?node-id=1-2&t=W2Fokhai7HfYjcbX-0
+6. Settime integration check
+7. Оновити кольорови схему в globals.css
    title: text-[#205b4f]
    main-bg: #0f5132
    nav color: #cba590
