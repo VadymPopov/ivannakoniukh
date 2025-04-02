@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className=' bg-[#0f5132] text-white'>
-      <div className='pt-24 pb-14 px-10 grid grid-cols-3  border-b border-white items-start gap-10'>
-        <div>
+      <div className='pt-24 pb-14 px-10 grid  md:grid-cols-3  border-b border-white items-start gap-10'>
+        <div className='flex flex-col items-center sm:items-start'>
           <Link href='/'>
             <Image
               src='/logo.svg'
@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className='p-10 flex justify-between items-center'>
+      <div className='p-10 flex justify-between items-center flex-col md:flex-row'>
         {" "}
         <div className='flex items-center justify-center text-center'>
           <span>Developed by</span>

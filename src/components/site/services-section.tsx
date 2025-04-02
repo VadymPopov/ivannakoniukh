@@ -75,14 +75,18 @@ function ServiceCards() {
               <CardTitle className='text-lg font-semibold'>
                 {service.title}
               </CardTitle>
-              <CardDescription>{service.description}</CardDescription>
+              <CardDescription className='text-justify'>
+                {service.description}
+              </CardDescription>
             </CardContent>
           </div>
 
           <CardFooter className='flex justify-between'>
             <p className='text-lg font-bold mt-2'>{service.price}</p>
             <CardAction className='flex gap-2'>
-              <Button variant='ghost'>More Details</Button>
+              <Button variant='ghost' className='hidden sm:block'>
+                More Details
+              </Button>
               <Button>Book Now</Button>
             </CardAction>
           </CardFooter>

@@ -5,7 +5,7 @@ import Title from "../ui/title";
 export default function MyPathSection() {
   return (
     <Section bgColor='bg-[#f0f5f3]'>
-      <div className='grid grid-cols-2 gap-10'>
+      <div className='md:grid grid-cols-2 gap-10'>
         <div>
           <Title level='h3' className='text-[#2997aa] text-lg font-normal mb-5'>
             Are you ready to step into your power?

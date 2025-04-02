@@ -6,8 +6,8 @@ import { Button } from "../ui/button";
 export default function HeroSection() {
   return (
     <Section bgColor='bg-[rgb(15,81,50)]'>
-      <div className='flex justify-between'>
-        <div className='flex flex-col items-start py-40 pl-40'>
+      <div className='flex justify-between md:flex-row flex-col-reverse'>
+        <div className='flex flex-col items-start md:py-40 md:pl-40 py-20'>
           <p className='text-lg text-white mb-5 uppercase'>
             Welcome to the world of transformations
           </p>
@@ -22,7 +22,7 @@ export default function HeroSection() {
             Free Consultation
           </Button>
         </div>
-        <div className='w-[700px] h-[700px] rounded-full overflow-hidden'>
+        <div className='md:w-[700px] md:h-[700px] w-[320px] h-[320px] rounded-full overflow-hidden'>
           <Image
             src='/hero.jpg'
             width={700}

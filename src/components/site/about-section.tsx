@@ -7,7 +7,7 @@ import Title from "../ui/title";
 export default function AboutSection() {
   return (
     <Section bgColor='bg-white'>
-      <div className='grid grid-cols-2 gap-10 mb-10'>
+      <div className='md:grid grid-cols-2 gap-10 mb-10'>
         <div className='flex justify-center items-center'>
           <Image
             src='/logo.svg'

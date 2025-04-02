@@ -21,8 +21,8 @@ const links = [
 
 export default function Header() {
   return (
-    <header className='py-4 px-8 flex justify-between items-center bg-[#0f5132]'>
-      <div className='flex items-center gap-8'>
+    <header className='py-4 px-8 flex justify-between items-center bg-[#0f5132] flex-col md:flex-row'>
+      <div className='flex items-center gap-8 flex-col md:flex-row'>
         <Image width={60} height={60} src='/logo.svg' alt='site-logo' />
         <Navbar />
       </div>

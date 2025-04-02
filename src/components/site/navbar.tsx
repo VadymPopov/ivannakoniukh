@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <NavigationMenu>
-      <NavigationMenuList className='flex gap-4 text-sm font-semibold'>
+      <NavigationMenuList className='flex gap-2 md:gap-4 text-sm font-semibold'>
         {navItems.map(({ label, href }) => (
           <NavigationMenuItem key={label}>
             <Link href={href} passHref legacyBehavior>
