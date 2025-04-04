@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_arrays_string_arrays",
+  "info": {
+    "displayName": "string-array"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "text"
+    }
+  }
+}
