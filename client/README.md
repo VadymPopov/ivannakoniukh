@@ -3,8 +3,7 @@
 0. Оновити лого
 1. Треба ще одне може 2 фото для секцій про мене та мій шлях
 2. Settime integration check, відкриватись як модальне вікно (Підключити сторонню лібу) або секція
-3. Events figure it out (Sanity, Strapi, Firebase)
-4. Оновити кольоровy схему в globals.css
+3. Оновити кольоровy схему в globals.css
    title: text-[#205b4f]
    main-bg: #0f5132
    nav color: #cba590
@@ -12,6 +11,10 @@
    text-[#704214]
    text-[#5a3f70]
    text-[#5a3f70]
+
+4. Оновити іконки
+5. Додати бейдж
+6. імпорт фікс, утиліта для сортування імпортів
 
 https://ivannakoniukh.odoo.com/
 https://nutakonuh.wixsite.com/mysite

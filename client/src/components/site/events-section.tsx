@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -8,40 +9,30 @@ import {
   CardAction,
 } from "../ui/card";
 import { Section } from "../ui/section";
-import { FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { FaMapMarkerAlt, FaClock, FaCalendar } from "react-icons/fa";
 import Title from "../ui/title";
-
-const events = [
-  {
-    title: "Therapeutic Consultation",
-    description:
-      "This session is designed to work on a subconscious level, helping you identify and heal the root causes of inner struggles.",
-    price: "60 €",
-    location: "Antwerp, Cornelissenlaan",
-    date: "5 May 2025",
-    time: "11:00 - 12:00",
-  },
-  {
-    title: "Therapeutic Consultation Package (4 Sessions)",
-    description:
-      "A package of 4 therapeutic consultations to deepen your healing journey.",
-    price: "220 €",
-    location: "Online",
-    date: "5 May 2025",
-    time: "11:00 - 12:00",
-  },
-  {
-    title: "Diagnostic Consultation",
-    description:
-      "This free consultation allows you to discuss your concerns and gain clarity on the best therapeutic approach for you.",
-    price: "0 €",
-    location: "Antwerp, Cornelissenlaan",
-    date: "5 May 2025",
-    time: "11:00 - 12:00",
-  },
-];
+import { useRouter } from "next/navigation";
+import { useEvents } from "@/hooks/useEvents";
+import { formatEuro } from "@/utils";
+import { format } from "date-fns";
 
 function EventsCards() {
+  const router = useRouter();
+
+  const { loading, error, events } = useEvents();
+
+  if (error) {
+    return <div>Error loading events</div>;
+  }
+
+  if (loading) {
+    return <div>...Loading</div>;
+  }
+
+  const onDetailsClick = (id: string) => {
+    router.replace(`/events/${id}`);
+  };
+
   return (
     <div className='p-6 flex flex-col gap-4'>
       {events.map((event, index) => (
@@ -54,8 +45,13 @@ function EventsCards() {
               <div className='flex flex-col gap-2'>
                 <CardDescription>{event.description}</CardDescription>
                 <CardDescription className='flex gap-2 items-center text-black'>
+                  <FaCalendar />
+                  {format(event.date, "MMM do, yyyy")},{" "}
+                  {event.time.substring(0, 5)}
+                </CardDescription>
+                <CardDescription className='flex gap-2 items-center text-black'>
                   <FaClock />
-                  {event.date}, {event.time}
+                  {event.duration} min
                 </CardDescription>
                 <CardDescription className='flex gap-2 items-center text-black'>
                   <FaMapMarkerAlt />
@@ -66,9 +62,12 @@ function EventsCards() {
           </div>
 
           <CardFooter className='flex justify-between'>
-            <p className='text-lg font-bold mt-2'>{event.price}</p>
+            <p className='text-lg font-bold mt-2'>{formatEuro(event.price)}</p>
             <CardAction className='flex gap-2'>
-              <Button variant='ghost' className='hidden sm:block'>
+              <Button
+                variant='ghost'
+                className='hidden sm:block'
+                onClick={() => onDetailsClick(event.documentId)}>
                 More Details
               </Button>
               <Button>Book Now</Button>

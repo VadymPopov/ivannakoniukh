@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/site/header";
 import Footer from "@/components/site/footer";
+import ApolloClientProvider from "@/providers/ApolloClientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,9 +35,11 @@ export default function RootLayout({
     <html lang='en' className='scroll-smooth'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <ApolloClientProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ApolloClientProvider>
       </body>
     </html>
   );
