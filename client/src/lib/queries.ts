@@ -1,6 +1,6 @@
 import { gql, request } from "graphql-request";
 
-type Badge = { id: string; label: string };
+type Badge = { documentId: string; label: string };
 type Detail = { id: string; label: string };
 type Outcome = { id: string; label: string };
 type Image = { name: string; alternativeText: string; url: string };

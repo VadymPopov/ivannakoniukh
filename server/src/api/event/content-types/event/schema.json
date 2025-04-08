@@ -4,7 +4,8 @@
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "Event"
+    "displayName": "Event",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -47,7 +48,7 @@
       }
     },
     "date": {
-      "type": "datetime",
+      "type": "date",
       "required": true,
       "pluginOptions": {
         "i18n": {
@@ -58,6 +59,9 @@
     "duration": {
       "type": "integer",
       "required": true
+    },
+    "time": {
+      "type": "time"
     }
   }
 }

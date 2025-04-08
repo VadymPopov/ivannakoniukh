@@ -21,7 +21,7 @@ const links = [
 
 export default function Header() {
   return (
-    <header className='py-4 px-8 flex justify-between items-center bg-[#0f5132] flex-col md:flex-row fixed w-full'>
+    <header className='py-4 px-6 md:px-16 lg:px-20 flex justify-between items-center bg-[#0f5132] flex-col md:flex-row fixed w-full z-50'>
       <div className='flex items-center gap-8 flex-col md:flex-row'>
         <Link href='/'>
           {" "}

@@ -88,7 +88,7 @@
         }
       }
     },
-    "outcome": {
+    "outcomes": {
       "type": "component",
       "repeatable": true,
       "component": "arrays.string-array",

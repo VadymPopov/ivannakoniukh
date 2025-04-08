@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHandsHelping, FaHeart, FaFlask, FaSpa } from "react-icons/fa";
+import { FaFlask, FaSpa, FaMountain, FaBattleNet } from "react-icons/fa";
 import Title from "../ui/title";
 
 const cards = [
@@ -11,14 +11,14 @@ const cards = [
     image: "/healing-one.svg",
   },
   {
-    icon: <FaHandsHelping className=' text-3xl' />,
+    icon: <FaBattleNet className=' text-3xl' />,
     title: "Holistic Approach",
     description:
       "A personalized healing journey addressing mind, body, and soul for total well-being.",
     image: "/healing-two.svg",
   },
   {
-    icon: <FaHeart className=' text-3xl' />,
+    icon: <FaMountain className=' text-3xl' />,
     title: "Personal Growth",
     description:
       "Unlock your full potential and overcome obstacles with guided support.",
@@ -49,7 +49,7 @@ export default function StepsCards() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className='bg-[#0f5132] p-6 rounded-lg shadow-md text-center'>
+            className='bg-gradient-to-b from-[#0f5132] via-[rgba(15,81,50,0.9)] to-[rgba(15,81,50,0.7)] backdrop-blur-lg p-6 rounded-lg shadow-md text-center transition-all duration-300 hover:bg-[#0f5132]'>
             <div className='mb-4 flex justify-center text-[#cba590]'>
               {card.icon}
             </div>

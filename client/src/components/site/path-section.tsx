@@ -12,7 +12,7 @@ export default function MyPathSection() {
           </Title>
           <Title className='text-[#205b4f] mb-5 uppercase'>My Path</Title>
           <div className='text-justify max-w-[520px] flex flex-col gap-2.5'>
-            <p className='text-[#704214]'>
+            <p>
               I know what it feels like to be at rock bottom—to question your
               purpose, to feel lost, unsure of how to change your life. I was
               there. I didn’t know where to turn until I discovered{" "}
@@ -21,7 +21,7 @@ export default function MyPathSection() {
               spending years in therapy, I realized true healing could happen in
               just one session.
             </p>
-            <p className='text-[#5a3f70]'>
+            <p>
               But my journey didn’t stop there. As I grew, I sensed deeper
               blockages—layers of emotions and patterns that still held me back.
               That’s when <span className='font-semibold'>energy work</span>{" "}
@@ -50,7 +50,7 @@ export default function MyPathSection() {
               foreign country—but has also helped my clients achieve rapid and
               lasting breakthroughs.
             </p>
-            <p className='text-[#205b4f]'>
+            <p>
               Healing doesn’t have to take years. You don’t have to stay stuck
               in old patterns. Even after just one session, you can feel a
               shift. Your{" "}

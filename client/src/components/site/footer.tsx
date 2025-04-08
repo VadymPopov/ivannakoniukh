@@ -1,12 +1,24 @@
+"use client";
 import { FaGithub, FaInstagram, FaRegEnvelope } from "react-icons/fa";
 
 import Image from "next/image";
 import Link from "next/link";
+import { useServices } from "@/hooks/useServices";
 
 export default function Footer() {
+  const { loading, error, services } = useServices();
+
+  if (error) {
+    return <div>Error loading services</div>;
+  }
+
+  if (loading) {
+    return <div>...Loading</div>;
+  }
+
   return (
     <footer className=' bg-[#0f5132] text-white'>
-      <div className='pt-24 pb-14 px-10 grid  md:grid-cols-3  border-b border-white items-start gap-10'>
+      <div className='pt-24 pb-14 px-6 md:px-16 lg:px-20 grid  md:grid-cols-3  border-b border-white items-start gap-10'>
         <div className='flex flex-col items-center sm:items-start'>
           <Link href='/'>
             <Image
@@ -27,21 +39,11 @@ export default function Footer() {
           <h2 className='text-base uppercase font-semibold mb-4'>Services</h2>
           <nav>
             <ul>
-              <li className='hover:scale-110 tracking-wide'>
-                <Link href='/'>Therapeutic Consultation</Link>
-              </li>
-              <li className='hover:scale-110 tracking-wide'>
-                <Link href='/'>Diagnostic Consultation</Link>
-              </li>
-              <li className='hover:scale-110 tracking-wide'>
-                <Link href='/'>Breathwork Therapy Session</Link>
-              </li>
-              <li className='hover:scale-110 tracking-wide'>
-                <Link href='/'>Tantric Breathwork Session</Link>
-              </li>
-              <li className='hover:scale-110 tracking-wide'>
-                <Link href='/'>Sadhu Boards</Link>
-              </li>
+              {services.map(({ title, slug }) => (
+                <li key={slug} className='hover:scale-110 tracking-wide'>
+                  <Link href={`/services/${slug}`}>{title}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
@@ -70,7 +72,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className='p-10 flex justify-between items-center flex-col md:flex-row'>
+      <div className='p-10 px-6 md:px-16 lg:px-20 flex justify-between items-center flex-col md:flex-row'>
         {" "}
         <div className='flex items-center justify-center text-center'>
           <span>Developed by</span>

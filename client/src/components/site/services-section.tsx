@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 import {
   Card,
   CardFooter,
@@ -35,13 +36,22 @@ function ServiceCards() {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6'>
       {services.map(
-        ({ title, price, groupPrice, description, slug, image }) => (
+        ({ title, price, groupPrice, description, slug, image, badges }) => (
           <Card
             key={slug}
-            className='overflow-hidden pt-0 flex flex-col justify-between h-full hover:cursor-pointer hover:shadow-2xl transition-colors'
+            className='overflow-hidden pt-0 flex flex-col justify-between h-full hover:cursor-pointer hover:shadow-2xl transition-colors relative'
             onClick={() => {
               router.replace(`/services/${slug}`);
             }}>
+            <div className='absolute top-5 right-5 flex gap-2'>
+              {badges.map(({ documentId, label }) => (
+                <Badge
+                  key={documentId}
+                  variant={label === "group" ? "default" : "secondary"}>
+                  {label}
+                </Badge>
+              ))}
+            </div>
             <div className=''>
               <Image
                 src={`${strapiBaseUrl}${image.url}`}

@@ -409,6 +409,7 @@ export interface ApiBadgeBadge extends Struct.CollectionTypeSchema {
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
+    description: '';
     displayName: 'Event';
     pluralName: 'events';
     singularName: 'event';
@@ -425,7 +426,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    date: Schema.Attribute.DateTime &
+    date: Schema.Attribute.Date &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -451,6 +452,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       }>;
     price: Schema.Attribute.Integer & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    time: Schema.Attribute.Time;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -522,7 +524,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::service.service'
     >;
-    outcome: Schema.Attribute.Component<'arrays.string-array', true> &
+    outcomes: Schema.Attribute.Component<'arrays.string-array', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

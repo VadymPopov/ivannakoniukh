@@ -5,16 +5,15 @@
 2. Settime integration check, відкриватись як модальне вікно (Підключити сторонню лібу) або секція
 3. Оновити кольоровy схему в globals.css
    title: text-[#205b4f]
-   main-bg: #0f5132
+   main-bg: #0f5132 or #6C8C7D
    nav color: #cba590
    second-bg: bg-gradient-to-r from-[#d9e8e5] to-[#a8cfc4]
    text-[#704214]
    text-[#5a3f70]
    text-[#5a3f70]
-
-4. Оновити іконки
-5. Додати бейдж
-6. імпорт фікс, утиліта для сортування імпортів
+4. імпорт фікс, утиліта для сортування імпортів
+5. Додати скелетон для карток і івентів
+6. Скрол як картки з фіксованим хедером (Фреймер) https://swishy.cc/
 
 https://ivannakoniukh.odoo.com/
 https://nutakonuh.wixsite.com/mysite
