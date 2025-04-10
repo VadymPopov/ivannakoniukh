@@ -4,14 +4,14 @@ import Title from "../ui/title";
 
 export default function MyPathSection() {
   return (
-    <Section bgColor='bg-gradient-to-r from-[#d9e8e5] to-[#a8cfc4]'>
-      <div className='md:grid grid-cols-2 gap-10'>
-        <div>
+    <Section bgColor='bg-[#d9e8e5] md:bg-[url(/path-bg-lg.png)] bg-no-repeat bg-contain bg-bottom md:bg-right relative'>
+      <div className='flex justify-center md:grid md:grid-cols-12 pb-[600px] md:pb-0'>
+        <div className='col-start-1 col-span-7'>
           <Title level='h3' className='text-[#2997aa] text-lg font-normal mb-5'>
             Are you ready to step into your power?
           </Title>
           <Title className='text-[#205b4f] mb-5 uppercase'>My Path</Title>
-          <div className='text-justify max-w-[520px] flex flex-col gap-2.5'>
+          <div className='text-justify max-w-2xl flex flex-col gap-2.5'>
             <p>
               I know what it feels like to be at rock bottom—to question your
               purpose, to feel lost, unsure of how to change your life. I was
@@ -50,29 +50,15 @@ export default function MyPathSection() {
               foreign country—but has also helped my clients achieve rapid and
               lasting breakthroughs.
             </p>
-            <p>
-              Healing doesn’t have to take years. You don’t have to stay stuck
-              in old patterns. Even after just one session, you can feel a
-              shift. Your{" "}
-              <span className='font-semibold'>
-                external world reflects your internal state
-              </span>
-              , and you attract not what you think, but what you feel. My
-              mission is to help you align with your true self—to find balance,
-              energy, clarity, confidence, and self-honesty. Because without
-              honesty with yourself, nothing in life is truly real.
-            </p>
           </div>
         </div>
-
-        <div className='flex justify-center items-center'>
-          {" "}
+        <div className='absolute bottom-0 left-0  md:hidden'>
           <Image
-            src='/meditation-white.webp'
             alt='logo'
-            className='w-[500px] h-[500px] object-cover rounded-md mb-4'
+            src='/path-bg-small.png'
             width={300}
             height={300}
+            className='w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] object-contain'
           />
         </div>
       </div>

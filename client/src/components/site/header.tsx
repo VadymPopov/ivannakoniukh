@@ -3,7 +3,6 @@ import { FaRegEnvelope, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import Navbar from "./navbar";
 import Link from "next/link";
-import { Button } from "../ui/button";
 import LanguageSwitcherDropdown from "./language-switcher";
 
 const links = [
@@ -21,8 +20,8 @@ const links = [
 
 export default function Header() {
   return (
-    <header className='py-4 px-6 md:px-16 lg:px-20 flex justify-between items-center bg-[#0f5132] flex-col md:flex-row fixed w-full z-50'>
-      <div className='flex items-center gap-8 flex-col md:flex-row'>
+    <header className='py-4 px-6 md:px-16 lg:px-20 flex justify-between items-center bg-[#0f5132] flex-col md:flex-row fixed w-full z-50 gap-2.5'>
+      <div className='flex items-center gap-2.5 lg:gap-8 flex-col md:flex-row'>
         <Link href='/'>
           {" "}
           <Image width={60} height={60} src='/logo.svg' alt='site-logo' />
@@ -45,11 +44,6 @@ export default function Header() {
             </Link>
           ))}
         </ul>
-        <Button
-          variant='ghost'
-          className='uppercase text-[#cba590] border border-[#cba590] py-2 px-4 text-xs font-semibold hover:bg-white hover:text-black'>
-          Book now
-        </Button>
         <LanguageSwitcherDropdown />
       </div>
     </header>

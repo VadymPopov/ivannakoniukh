@@ -1,29 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import { Section } from "../ui/section";
-import StepsCards from "./steps-cards";
+
 import Title from "../ui/title";
 
 export default function AboutSection() {
   return (
-    <Section bgColor='bg-white' id='about'>
-      <div className='md:grid grid-cols-2 gap-10 mb-10'>
-        <div className='flex justify-center items-center'>
-          <Image
-            src='/logo.svg'
-            alt='logo'
-            className='w-[500px] h-[500px] object-cover rounded-md mb-4'
-            width={300}
-            height={300}
-          />
-        </div>
-
-        <div>
+    <Section
+      bgColor='bg-white md:bg-[url(/about-bg-lg.png)] bg-no-repeat bg-contain bg-bottom md:bg-left relative'
+      id='about'>
+      <div className='flex justify-center md:grid md:grid-cols-12 pb-[600px] md:pb-0'>
+        <div className='col-start-6 col-span-7'>
           <Title level='h3' className='text-[#2997aa] text-lg font-normal mb-5'>
             Start your journey to a better life today
           </Title>
           <Title className='text-[#205b4f] mb-5 uppercase'>About me</Title>
-          <div className='text-justify max-w-[520px] flex flex-col gap-2.5'>
+          <div className='text-justify max-w-2xl flex flex-col gap-2.5'>
             <p>
               With over a decade of exploring psychology and more than two years
               of deep energy work, including tantric practices and Kundalini
@@ -44,8 +36,16 @@ export default function AboutSection() {
             </p>
           </div>
         </div>
+        <div className='absolute bottom-0 left-0  md:hidden'>
+          <Image
+            alt='logo'
+            src='/about-bg-small.png'
+            width={300}
+            height={300}
+            className='w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] object-contain'
+          />
+        </div>
       </div>
-      <StepsCards />
     </Section>
   );
 }

@@ -34,7 +34,7 @@ function EventsCards() {
   };
 
   return (
-    <div className='p-6 flex flex-col gap-4'>
+    <div className='flex flex-col gap-4'>
       {events.map((event, index) => (
         <Card key={index} className='flex flex-col justify-between h-full'>
           <div className=''>
@@ -81,12 +81,12 @@ function EventsCards() {
 
 export default function EventsSection() {
   return (
-    <Section bgColor='bg-gradient-to-r from-[#d9e8e5] to-[#a8cfc4]' id='events'>
+    <Section bgColor='bg-[#d9e8e5] h-screen' id='events'>
       <div className='text-center max-w-2xl mx-auto'>
-        <Title level='h3' className='text-[#2997aa] text-lg font-normal'>
+        <Title level='h3' className='text-[#2997aa] text-lg font-normal mb-5'>
           Explore our upcoming
         </Title>
-        <Title className='text-[#205b4f] mt-2 uppercase'>Events</Title>
+        <Title className='text-[#205b4f] mb-5 uppercase'>Events</Title>
       </div>
 
       <EventsCards />

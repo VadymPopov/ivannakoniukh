@@ -20,7 +20,7 @@ export default async function EventPage({
   }
 
   return (
-    <div className='min-h-screen font-[family-name:var(--font-geist-sans)] pt-[190px] md:pt-[68px]'>
+    <div className='min-h-screen font-[family-name:var(--font-geist-sans)] pt-[178px] md:pt-[86px] md:bg-[url(/bg.png)] bg-no-repeat bg-[length:50%_auto] bg-[position:150%_50%] bg-origin-content'>
       <main className='max-w-2xl mx-auto p-6 text-justify'>
         <Section>
           <Title className='text-[#205b4f] mb-5 uppercase'>{event.title}</Title>

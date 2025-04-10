@@ -34,7 +34,7 @@ function ServiceCards() {
     event.stopPropagation();
   };
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6'>
+    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
       {services.map(
         ({ title, price, groupPrice, description, slug, image, badges }) => (
           <Card
@@ -58,10 +58,12 @@ function ServiceCards() {
                 alt={image.alternativeText || title}
                 width={400}
                 height={300}
-                className='w-full h-80 object-cover object-top'
+                className='w-full md:h-60 lg:h-80 object-cover object-top'
               />
               <CardContent className='mt-4'>
-                <CardTitle className='text-lg font-semibold'>{title}</CardTitle>
+                <CardTitle className='text-lg font-semibold mb-2'>
+                  {title}
+                </CardTitle>
                 <CardDescription className='text-justify'>
                   {description}
                 </CardDescription>
@@ -69,7 +71,7 @@ function ServiceCards() {
             </div>
 
             <CardFooter className='flex justify-between'>
-              <p className='text-lg font-bold mt-2'>
+              <p className='text-base lg:text-lg font-bold'>
                 {groupPrice ? (
                   <>
                     {formatEuro(price)} - {formatEuro(groupPrice)}
@@ -93,10 +95,10 @@ export default function ServicesSection() {
   return (
     <Section bgColor='bg-white' id='services'>
       <div className='text-center max-w-2xl mx-auto'>
-        <Title level='h3' className='text-[#2997aa] text-lg font-normal'>
+        <Title level='h3' className='text-[#2997aa] text-lg font-normal mb-5'>
           Elevate Your Well-Being
         </Title>
-        <Title className='text-[#205b4f] mt-2 uppercase'>Services</Title>
+        <Title className='text-[#205b4f] uppercase mb-5'>Services</Title>
       </div>
 
       <ServiceCards />
