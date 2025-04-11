@@ -59,6 +59,7 @@ function ServiceCards() {
                 width={400}
                 height={300}
                 className='w-full md:h-60 lg:h-80 object-cover object-top'
+                unoptimized
               />
               <CardContent className='mt-4'>
                 <CardTitle className='text-lg font-semibold mb-2'>
