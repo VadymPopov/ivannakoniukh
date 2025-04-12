@@ -1,0 +1,93 @@
+{
+  "Layout": {
+    "title": "Ivanna Koniukh",
+    "description": "Your personal holistic therapist, committed to enhancing your well-being and transforming your life."
+  },
+  "Navbar": {
+    "items": [
+      { "key": "home", "label": "Home", "href": "/#home" },
+      { "key": "about", "label": "About", "href": "/#about" },
+      { "key": "services", "label": "Services", "href": "/#services" },
+      { "key": "events", "label": "Events", "href": "/#events" }
+    ]
+  },
+  "Footer": {
+    "description": "Your personal holistic therapist, committed to enhancing your well-being and transforming your life.",
+    "services": "Services",
+    "touch": "Get in touch",
+    "developer": "Developed by",
+    "author": "Ivanna Koniuh"
+  },
+  "HeroSection": {
+    "subtitle": "Welcome to the world of transformations",
+    "title": "Ivanna Koniukh",
+    "description": "Your personal holistic therapist, committed to enhancing your well-being and transforming your life.",
+    "button": "Free Consultation"
+  },
+  "StepsSection": {
+    "subtitle": "Unlock the potential of your energy with my guidance",
+    "title": "Empowering Transformation Through Energy Healing",
+    "description": "Your personal holistic therapist, committed to enhancing your well-being and transforming your life.",
+    "cards": [
+      {
+        "title": "Transformational Healing",
+        "description": "Experience profound healing and energy shifts that bring balance to your life."
+      },
+      {
+        "title": "Holistic Approach",
+        "description": "A personalized healing journey addressing mind, body, and soul for total well-being."
+      },
+      {
+        "title": "Personal Growth",
+        "description": "Unlock your full potential and overcome obstacles with guided support."
+      },
+      {
+        "title": "Scientifically Proven Techniques",
+        "description": "Benefit from healing methods backed by research and energy science."
+      }
+    ]
+  },
+  "AboutSection": {
+    "subtitle": "Start your journey to a better life today",
+    "title": "About me",
+    "description": {
+      "0": "With over a decade of exploring psychology and more than two years of deep energy work, including tantric practices and Kundalini energy, I’ve transformed my own life and found my true purpose:guiding others toward healing and growth.",
+      "1": "My clients often share how comfortable and natural it feels to open up to me, even in our very first session. They experience deep shifts, uncover simple yet powerful solutions to their challenges, and witness real, positive changes in their lives.Even a single session can provide clarity, balance, and a fresh outlook where you get rid of your blockages that stop you in life."
+    },
+    "action": "Are you ready to step into a better version of yourself? Let’s begin this journey together."
+  },
+  "PathSection": {
+    "subtitle": "Are you ready to step into your power?",
+    "title": "My Path",
+    "description": {
+      "paragraph1": "I know what it feels like to be at rock bottom—to question your purpose, to feel lost, unsure of how to change your life. I was there. I didn’t know where to turn until I discovered <strong>quantum psychology</strong>, and that was my turning point. It was a game-changer. Instead of spending years in therapy, I realized true healing could happen in just one session.",
+
+      "paragraph2": "But my journey didn’t stop there. As I grew, I sensed deeper blockages—layers of emotions and patterns that still held me back. That’s when <strong>energy work</strong> found me. I immersed myself in <strong>breathwork</strong>, <strong>tantric breathing</strong>, <strong>tantric diamond healing</strong>, <strong>Kundalini energy activation</strong>, and other transformative practices. This was the missing piece—the connection between the body, energy, and unconscious mind.",
+
+      "paragraph3": "Now, I bring this powerful combination to my clients. You can work <strong>through the body</strong> with energy practices like Tantra and Kundalini, or you can work <strong>through the unconscious</strong> with quantum psychology. But when you merge both, the results are profound. This unique integration has not only transformed me—from someone afraid to stand up for herself to building a business in a foreign country—but has also helped my clients achieve rapid and lasting breakthroughs."
+    }
+  },
+  "ServicesSection": {
+    "subtitle": "Elevate Your Well-Being",
+    "title": "Services",
+    "button": "Book now"
+  },
+  "EventsSection": {
+    "subtitle": "Explore our upcoming",
+    "title": "Events",
+    "duration": "min",
+    "buttons": { "details": "More Details", "book": "Book now" }
+  },
+  "EventPage": {
+    "title": "Date & Time",
+    "duration": "min",
+    "button": "Book now"
+  },
+  "ServicePage": {
+    "detailsTitle": "What You'll Get:",
+    "outcomeTitle": "Expected Outcomes:",
+    "price": "Price:",
+    "badge": { "individual": "individual", "group": "group" },
+    "button": "Book now"
+  }
+}

@@ -1,15 +1,15 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery } from '@apollo/client';
 
-import { Event } from "@/lib/queries";
+import { Event } from '@/lib/queries';
 
 type GetEventsData = {
   events: Event[];
 };
 
-export const useEvents = () => {
+export const useEvents = (locale: string) => {
   const GET_EVENTS = gql`
-    query GetEvents {
-      events {
+    query GetEvents($locale: I18NLocaleCode) {
+      events(locale: $locale) {
         documentId
         title
         description
@@ -22,7 +22,9 @@ export const useEvents = () => {
     }
   `;
 
-  const { loading, error, data } = useQuery<GetEventsData>(GET_EVENTS);
+  const { loading, error, data } = useQuery<GetEventsData>(GET_EVENTS, {
+    variables: { locale },
+  });
 
   return {
     loading,

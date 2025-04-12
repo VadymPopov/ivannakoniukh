@@ -1,31 +1,35 @@
-import React from "react";
+import React from 'react';
+import { useTranslations } from 'next-intl';
 
-import { Button } from "../ui/button";
-import { Section } from "../ui/section";
-import Title from "../ui/title";
+import { Button } from '../ui/button';
+import { Section } from '../ui/section';
+import Title from '../ui/title';
 
 export default function HeroSection() {
+  const t = useTranslations('HeroSection');
   return (
     <Section
-      bgColor='bg-[rgb(15,81,50)] bg-[url(/hero-bg-small.png)] lg:bg-[url(/hero-bg-lg.png)] bg-no-repeat bg-contain bg-bottom md:bg-right'
-      id='home'>
-      <div className='flex flex-col items-center md:items-start xl:pl-40 md:py-20 h-screen md:h-auto'>
-        <p className='md:text-sm lg:text-lg text-white mb-5 uppercase text-center'>
-          Welcome to the world of transformations
+      bgColor="bg-[rgb(15,81,50)] bg-[url(/hero-bg-small.png)] lg:bg-[url(/hero-bg-lg.png)] bg-no-repeat bg-contain bg-bottom md:bg-right"
+      id="home"
+    >
+      <div className="flex h-screen flex-col items-center md:h-auto md:items-start md:py-20 xl:pl-40">
+        <p className="mb-5 text-center text-white uppercase md:text-sm lg:text-lg">
+          {t('subtitle')}
         </p>
         <Title
-          level='h1'
-          className='uppercase md:text-6xl lg:text-7xl text-white pb-5 md:max-w-[350px] text-center md:text-left'>
-          Ivanna Koniukh
+          level="h1"
+          className="pb-5 text-center text-white uppercase md:max-w-[350px] md:text-left md:text-6xl lg:text-7xl"
+        >
+          {t('title')}
         </Title>
-        <p className='md:text-base lg:text-lg text-white md:max-w-[320px] lg:max-w-md mb-5 text-center md:text-left'>
-          Your personal holistic therapist, committed to enhancing your
-          well-being and transforming your life.
+        <p className="mb-5 text-center text-white md:max-w-[320px] md:text-left md:text-base lg:max-w-md lg:text-lg">
+          {t('description')}
         </p>
         <Button
-          variant='outline'
-          className='uppercase text-black border py-2 px-4 text-xs font-semibold hover:bg-transparent hover:text-white'>
-          Free Consultation
+          variant="outline"
+          className="border px-4 py-2 text-xs font-semibold text-black uppercase hover:bg-transparent hover:text-white"
+        >
+          {t('button')}
         </Button>
       </div>
     </Section>

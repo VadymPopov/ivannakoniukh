@@ -1,46 +1,49 @@
-import React from "react";
-import { FaInstagram,FaRegEnvelope } from "react-icons/fa";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import { FaInstagram, FaRegEnvelope } from 'react-icons/fa';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
-import LanguageSwitcherDropdown from "./language-switcher";
-import Navbar from "./navbar";
+import LanguageSwitcherDropdown from './language-switcher';
+import Navbar from './navbar';
 
 const links = [
   {
-    href: "https://www.instagram.com/ivanna_koniukh/",
+    href: 'https://www.instagram.com/ivanna_koniukh/',
     icon: <FaInstagram size={24} />,
-    label: "instagram",
+    label: 'instagram',
   },
   {
-    href: "mailto:ivannakoniukh@gmail.com",
+    href: 'mailto:ivannakoniukh@gmail.com',
     icon: <FaRegEnvelope size={24} />,
-    label: "email",
+    label: 'email',
   },
 ];
 
 export default function Header() {
+  const locale = useLocale();
   return (
-    <header className='py-4 px-6 md:px-16 lg:px-20 flex justify-between items-center bg-[#0f5132] flex-col md:flex-row fixed w-full z-50 gap-2.5'>
-      <div className='flex items-center gap-2.5 lg:gap-8 flex-col md:flex-row'>
-        <Link href='/'>
-          {" "}
-          <Image width={60} height={60} src='/logo.svg' alt='site-logo' />
+    <header className="fixed z-50 flex w-full flex-col items-center justify-between gap-2.5 bg-[#0f5132] px-6 py-4 md:flex-row md:px-16 lg:px-20">
+      <div className="flex flex-col items-center gap-2.5 md:flex-row lg:gap-8">
+        <Link href={`/${locale}`}>
+          {' '}
+          <Image width={60} height={60} src="/logo.svg" alt="site-logo" />
         </Link>
 
         <Navbar />
       </div>
 
-      <div className='flex items-center gap-5'>
-        <ul className='flex gap-4 text-[#cba590]'>
+      <div className="flex items-center gap-5">
+        <ul className="flex gap-4 text-[#cba590]">
           {links.map(({ href, icon, label }) => (
             <Link
               key={label}
               href={href}
-              target='_blank'
-              rel='noopener noreferrer'
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={`${label}-page`}
-              className='hover:text-white hover:cursor-pointer'>
+              className="hover:cursor-pointer hover:text-white"
+            >
               {icon}
             </Link>
           ))}

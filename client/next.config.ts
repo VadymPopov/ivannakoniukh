@@ -1,8 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 const imageDomains = process.env.NEXT_PUBLIC_IMAGE_DOMAINS
-  ? process.env.NEXT_PUBLIC_IMAGE_DOMAINS.split(",")
-  : ["localhost"];
+  ? process.env.NEXT_PUBLIC_IMAGE_DOMAINS.split(',')
+  : ['localhost'];
 
+const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
@@ -10,4 +12,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

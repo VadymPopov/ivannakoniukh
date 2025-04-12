@@ -1,4 +1,4 @@
-import { gql, request } from "graphql-request";
+import { gql, request } from 'graphql-request';
 
 type Badge = { documentId: string; label: string };
 type Detail = { id: string; label: string };
@@ -38,11 +38,12 @@ type GetEventByIdResponse = {
 };
 
 export const getServiceBySlug = async (
-  slug: string
+  slug: string,
+  locale: string,
 ): Promise<Service | null> => {
   const GET_SERVICE_BY_SLUG = gql`
-    query GetServiceBySlug($slug: String!) {
-      services(filters: { slug: { eq: $slug } }) {
+    query GetServiceBySlug($slug: String!, $locale: I18NLocaleCode) {
+      services(filters: { slug: { eq: $slug } }, locale: $locale) {
         documentId
         title
         price
@@ -66,20 +67,21 @@ export const getServiceBySlug = async (
   `;
 
   const data = await request<GetServiceBySlugResponse>(
-    process.env.NEXT_PUBLIC_GRAPHQL_URI || "http://localhost:1337/graphql",
+    process.env.NEXT_PUBLIC_GRAPHQL_URI || 'http://localhost:1337/graphql',
     GET_SERVICE_BY_SLUG,
-    { slug }
+    { slug, locale },
   );
 
   return data?.services[0] || null;
 };
 
 export const getEventById = async (
-  documentId: string
+  documentId: string,
+  locale: string,
 ): Promise<Event | null> => {
   const GET_EVENT_BY_ID = gql`
-    query GetEventById($documentId: ID!) {
-      event(documentId: $documentId) {
+    query GetEventById($documentId: ID!, $locale: I18NLocaleCode) {
+      event(documentId: $documentId, locale: $locale) {
         title
         description
         documentId
@@ -93,9 +95,9 @@ export const getEventById = async (
   `;
 
   const data = await request<GetEventByIdResponse>(
-    process.env.NEXT_PUBLIC_GRAPHQL_URI || "http://localhost:1337/graphql",
+    process.env.NEXT_PUBLIC_GRAPHQL_URI || 'http://localhost:1337/graphql',
     GET_EVENT_BY_ID,
-    { documentId: documentId }
+    { documentId, locale },
   );
 
   return data?.event || null;

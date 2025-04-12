@@ -1,5 +1,7 @@
 import { FaCalendar, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 import { redirect } from 'next/navigation';
+import { Locale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 import { format } from 'date-fns';
 
@@ -9,13 +11,14 @@ import Title from '@/components/ui/title';
 import { getEventById } from '@/lib/queries';
 import { formatEuro } from '@/utils';
 
-export default async function EventPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
-  const event = await getEventById(id);
+type Props = {
+  params: Promise<{ locale: Locale; id: string }>;
+};
+
+export default async function EventPage({ params }: Props) {
+  const { locale, id } = await params;
+  const event = await getEventById(id, locale);
+  const t = await getTranslations({ locale, namespace: 'EventPage' });
 
   if (!event) {
     redirect('/');
@@ -32,7 +35,7 @@ export default async function EventPage({
             level="h3"
             className="mb-4 text-xl font-semibold text-[#205b4f] uppercase"
           >
-            Date & Time:
+            {t('title')}
           </Title>
 
           <div className="mb-4 flex flex-col gap-2">
@@ -42,7 +45,7 @@ export default async function EventPage({
             </p>
             <p className="flex items-center gap-2 text-black">
               <FaClock />
-              {event.duration} min
+              {event.duration} {t('duration')}
             </p>
             <p className="flex items-center gap-2 text-black">
               <FaMapMarkerAlt />
@@ -52,7 +55,7 @@ export default async function EventPage({
 
           <div className="flex items-center justify-between">
             <p className="mt-2 text-lg font-bold">{formatEuro(event.price)}</p>
-            <Button>Book Now</Button>
+            <Button>{t('button')}</Button>
           </div>
         </Section>
       </main>

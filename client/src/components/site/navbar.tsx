@@ -1,38 +1,40 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useLocale, useTranslations } from 'next-intl';
 
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-
-const navItems = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Events", href: "/#events" },
-];
+} from '@/components/ui/navigation-menu';
+import { cn } from '@/lib/utils';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations('Navbar');
+  const navItems = t.raw('items') as {
+    key: string;
+    label: string;
+    href: string;
+  }[];
 
   return (
     <NavigationMenu>
-      <NavigationMenuList className='flex gap-2 md:gap-4 text-sm font-semibold'>
-        {navItems.map(({ label, href }) => (
-          <NavigationMenuItem key={label}>
-            <Link href={href} passHref legacyBehavior>
+      <NavigationMenuList className="flex gap-2 text-sm font-semibold md:gap-4">
+        {navItems.map(({ key, label, href }) => (
+          <NavigationMenuItem key={key}>
+            <Link href={`${locale}/${href}`} passHref legacyBehavior>
               <NavigationMenuLink
                 className={cn(
-                  "uppercase px-4 py-2 rounded-md transition-colors",
-                  "text-[#cba590] hover:text-white hover:bg-[#cba590]/20",
-                  pathname === href && "text-white bg-[#cba590]/30"
-                )}>
+                  'rounded-md px-4 py-2 uppercase transition-colors',
+                  'text-[#cba590] hover:bg-[#cba590]/20 hover:text-white',
+                  pathname === href && 'bg-[#cba590]/30 text-white',
+                )}
+              >
                 {label}
               </NavigationMenuLink>
             </Link>

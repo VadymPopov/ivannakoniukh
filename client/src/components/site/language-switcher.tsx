@@ -1,29 +1,45 @@
-"use client";
-import { useState } from "react";
+'use client';
+import { useParams } from 'next/navigation';
+import { useLocale } from 'next-intl';
 
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
+import { usePathname, useRouter } from '@/i18n/navigation';
 
 const LanguageSwitcher = () => {
-  const [locale, setLocale] = useState("en");
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams();
+  const locale = useLocale();
 
   const handleLanguageChange = (newLocale: string) => {
-    console.log(newLocale);
-    setLocale(newLocale);
+    router.replace(
+      // @ts-expect-error -- TypeScript will validate that only known `params`
+      { pathname, params },
+      { locale: newLocale },
+    );
   };
+
+  const languages = [
+    { code: 'en', name: 'English' },
+    { code: 'uk', name: 'Українська' },
+  ];
 
   return (
     <Select value={locale} onValueChange={handleLanguageChange}>
-      <SelectTrigger className='uppercase text-[#cba590] border border-[#cba590] hover:text-black hover:bg-white'>
-        <span>{locale === "en" ? "en" : "ua"}</span>
+      <SelectTrigger className="border border-[#cba590] text-[#cba590] uppercase hover:bg-white hover:text-black">
+        <span>{locale === 'en' ? 'en' : 'uk'}</span>
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value='en'>English</SelectItem>
-        <SelectItem value='ua'>Ukrainian</SelectItem>
+        {languages.map((lang) => (
+          <SelectItem key={lang.code} value={lang.code}>
+            {lang.name}
+          </SelectItem>
+        ))}
       </SelectContent>
     </Select>
   );

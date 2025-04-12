@@ -1,15 +1,15 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery } from '@apollo/client';
 
-import { Service } from "@/lib/queries";
+import { Service } from '@/lib/queries';
 
 type GetServicesData = {
   services: Service[];
 };
 
-export const useServices = () => {
+export const useServices = (locale: string) => {
   const GET_SERVICES = gql`
-    query GetServices {
-      services {
+    query GetServices($locale: I18NLocaleCode) {
+      services(locale: $locale) {
         documentId
         title
         price
@@ -29,7 +29,9 @@ export const useServices = () => {
     }
   `;
 
-  const { loading, error, data } = useQuery<GetServicesData>(GET_SERVICES);
+  const { loading, error, data } = useQuery<GetServicesData>(GET_SERVICES, {
+    variables: { locale },
+  });
 
   return {
     loading,
