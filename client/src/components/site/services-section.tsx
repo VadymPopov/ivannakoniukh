@@ -1,18 +1,20 @@
 "use client";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
+
 import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
 import {
   Card,
+  CardAction,
+  CardContent,
+  CardDescription,
   CardFooter,
   CardTitle,
-  CardDescription,
-  CardContent,
-  CardAction,
 } from "../ui/card";
 import { Section } from "../ui/section";
 import Title from "../ui/title";
-import { useRouter } from "next/navigation";
+
 import { useServices } from "@/hooks/useServices";
 import { formatEuro } from "@/utils";
 

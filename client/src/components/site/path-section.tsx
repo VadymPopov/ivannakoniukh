@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { Section } from "../ui/section";
 import Title from "../ui/title";
 

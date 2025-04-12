@@ -1,5 +1,6 @@
-import { Event } from "@/lib/queries";
 import { gql, useQuery } from "@apollo/client";
+
+import { Event } from "@/lib/queries";
 
 type GetEventsData = {
   events: Event[];

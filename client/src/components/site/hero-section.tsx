@@ -1,6 +1,7 @@
 import React from "react";
-import { Section } from "../ui/section";
+
 import { Button } from "../ui/button";
+import { Section } from "../ui/section";
 import Title from "../ui/title";
 
 export default function HeroSection() {

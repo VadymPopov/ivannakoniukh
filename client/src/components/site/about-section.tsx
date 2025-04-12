@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { Section } from "../ui/section";
 
+import { Section } from "../ui/section";
 import Title from "../ui/title";
 
 export default function AboutSection() {

@@ -1,9 +1,10 @@
 import React from "react";
-import { FaRegEnvelope, FaInstagram } from "react-icons/fa";
+import { FaInstagram,FaRegEnvelope } from "react-icons/fa";
 import Image from "next/image";
-import Navbar from "./navbar";
 import Link from "next/link";
+
 import LanguageSwitcherDropdown from "./language-switcher";
+import Navbar from "./navbar";
 
 const links = [
   {

@@ -1,29 +1,31 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Nunito } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/site/header";
-import Footer from "@/components/site/footer";
-import ApolloClientProvider from "@/providers/ApolloClientProvider";
+import './globals.css';
+
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono, Nunito } from 'next/font/google';
+
+import Footer from '@/components/site/footer';
+import Header from '@/components/site/header';
+import ApolloClientProvider from '@/providers/ApolloClientProvider';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
+  variable: '--font-nunito',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Ivanna Koniukh",
+  title: 'Ivanna Koniukh',
   description:
-    "Your personal holistic therapist, committed to enhancing your well-being and transforming your life.",
+    'Your personal holistic therapist, committed to enhancing your well-being and transforming your life.',
 };
 
 export default function RootLayout({
@@ -32,9 +34,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='scroll-smooth'>
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} antialiased`}
+      >
         <ApolloClientProvider>
           <Header />
           {children}

@@ -1,11 +1,12 @@
 "use client";
+import { useState } from "react";
+
 import {
   Select,
-  SelectTrigger,
   SelectContent,
   SelectItem,
+  SelectTrigger,
 } from "@/components/ui/select";
-import { useState } from "react";
 
 const LanguageSwitcher = () => {
   const [locale, setLocale] = useState("en");

@@ -1,8 +1,8 @@
 "use client";
 import { FaGithub, FaInstagram, FaRegEnvelope } from "react-icons/fa";
-
 import Image from "next/image";
 import Link from "next/link";
+
 import { useServices } from "@/hooks/useServices";
 
 export default function Footer() {

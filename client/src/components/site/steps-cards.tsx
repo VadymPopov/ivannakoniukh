@@ -1,5 +1,6 @@
 import React from "react";
-import { FaFlask, FaSpa, FaMountain, FaBattleNet } from "react-icons/fa";
+import { FaBattleNet,FaFlask, FaMountain, FaSpa } from "react-icons/fa";
+
 import Title from "../ui/title";
 
 const cards = [

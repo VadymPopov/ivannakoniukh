@@ -1,20 +1,23 @@
 "use client";
+import { FaCalendar,FaClock, FaMapMarkerAlt } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+
+import { format } from "date-fns";
+
 import { Button } from "../ui/button";
 import {
   Card,
+  CardAction,
+  CardContent,
+  CardDescription,
   CardFooter,
   CardTitle,
-  CardDescription,
-  CardContent,
-  CardAction,
 } from "../ui/card";
 import { Section } from "../ui/section";
-import { FaMapMarkerAlt, FaClock, FaCalendar } from "react-icons/fa";
 import Title from "../ui/title";
-import { useRouter } from "next/navigation";
+
 import { useEvents } from "@/hooks/useEvents";
 import { formatEuro } from "@/utils";
-import { format } from "date-fns";
 
 function EventsCards() {
   const router = useRouter();

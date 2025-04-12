@@ -1,7 +1,8 @@
 import React from "react";
-import StepsCards from "./steps-cards";
+
 import { Section } from "../ui/section";
 import Title from "../ui/title";
+import StepsCards from "./steps-cards";
 
 export default function StepsSection() {
   return (

@@ -1,5 +1,6 @@
-import { Service } from "@/lib/queries";
 import { gql, useQuery } from "@apollo/client";
+
+import { Service } from "@/lib/queries";
 
 type GetServicesData = {
   services: Service[];
