@@ -7,6 +7,7 @@ import { Section } from '@/components/ui/section';
 import Title from '@/components/ui/title';
 import { getServiceBySlug } from '@/lib/queries';
 import { formatEuro } from '@/utils';
+import { Badge } from '@/components/ui/badge';
 
 type Props = {
   params: Promise<{ locale: Locale; slug: string }>;
@@ -26,34 +27,85 @@ export default async function ServicePage({ params }: Props) {
     <div className="bg-background-light min-h-screen bg-[length:50%_auto] bg-[position:150%_50%] bg-no-repeat bg-origin-content pt-[178px] font-[family-name:var(--font-geist-sans)] md:bg-[url(/bg.png)] md:pt-[86px]">
       <main className="max-w-3xl p-6 text-justify lg:ml-20 xl:max-w-4xl">
         <Section>
-          <Title className="text-background mb-5 uppercase">
+          <Title className="text-background mb-5 text-2xl uppercase sm:text-4xl">
             {service.title}
           </Title>
-          <p className="mb-4">{service.description}</p>
+          <div className="mb-4 flex justify-end gap-2">
+            {service.badges.map(({ documentId, label }) => (
+              <Badge
+                key={documentId}
+                variant={label === 'group' ? 'default' : 'secondary'}
+              >
+                {label}
+              </Badge>
+            ))}
+          </div>
+          <p className="mb-4 font-semibold">{service.pageDetails.intro}</p>
+          <p className="mb-4">{service.pageDetails.description}</p>
+
+          {service.pageDetails.why && (
+            <>
+              <Title
+                level="h3"
+                className="text-background mb-4 text-xl font-semibold uppercase"
+              >
+                {service.pageDetails.why.title}
+              </Title>
+              {service.pageDetails.why.description && (
+                <p className="mb-4">{service.pageDetails.why.description}</p>
+              )}
+              <ul className="mb-6 list-disc space-y-2 pl-5">
+                {service.pageDetails.why.items.map(({ id, label }) => (
+                  <li key={id}>{label}</li>
+                ))}
+              </ul>
+            </>
+          )}
 
           <Title
             level="h3"
             className="text-background mb-4 text-xl font-semibold uppercase"
           >
-            {t('detailsTitle')}
+            {service.pageDetails.details.title}
           </Title>
           <ul className="mb-6 list-disc space-y-2 pl-5">
-            {service.details.map(({ id, label }) => (
+            {service.pageDetails.details.items.map(({ id, label }) => (
               <li key={id}>{label}</li>
             ))}
           </ul>
+
+          {service.pageDetails.what && (
+            <>
+              <Title
+                level="h3"
+                className="text-background mb-4 text-xl font-semibold uppercase"
+              >
+                {service.pageDetails.what.title}
+              </Title>
+              {service.pageDetails.what.description && (
+                <p className="mb-4">{service.pageDetails.what.description}</p>
+              )}
+              <ul className="mb-6 list-disc space-y-2 pl-5">
+                {service.pageDetails.what.items.map(({ id, label }) => (
+                  <li key={id}>{label}</li>
+                ))}
+              </ul>
+            </>
+          )}
 
           <Title
             level="h3"
             className="text-background mb-4 text-xl font-semibold uppercase"
           >
-            {t('outcomeTitle')}
+            {service.pageDetails.outcomes.title}
           </Title>
           <ul className="mb-6 list-disc space-y-2 pl-5">
-            {service.outcomes.map(({ id, label }) => (
+            {service.pageDetails.outcomes.items.map(({ id, label }) => (
               <li key={id}>{label}</li>
             ))}
           </ul>
+
+          <p className="mb-4 font-semibold">{service.pageDetails.cta}</p>
 
           <div className="flex items-center justify-between">
             {service.groupPrice ? (

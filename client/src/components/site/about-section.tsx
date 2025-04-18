@@ -7,6 +7,10 @@ import Title from '../ui/title';
 
 export default function AboutSection() {
   const t = useTranslations('AboutSection');
+  const RichText = (textKey: string) =>
+    t.rich(textKey, {
+      strong: (chunks) => <span className="font-semibold">{chunks}</span>,
+    });
   return (
     <Section
       bgColor="bg-background-light"
@@ -25,8 +29,8 @@ export default function AboutSection() {
             {t('title')}
           </Title>
           <div className="flex max-w-2xl flex-col gap-2.5 text-justify">
-            <p>{t('description.0')}</p>
-            <p>{t('description.1')}</p>
+            <p>{RichText('description.paragraph1')}</p>
+            <p>{RichText('description.paragraph2')}</p>
             <p className="font-semibold">{t('action')}</p>
           </div>
         </div>

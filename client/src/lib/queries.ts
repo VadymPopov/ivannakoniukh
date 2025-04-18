@@ -1,21 +1,35 @@
 import { gql, request } from 'graphql-request';
 
 type Badge = { documentId: string; label: string };
-type Detail = { id: string; label: string };
-type Outcome = { id: string; label: string };
 type Image = { name: string; alternativeText: string; url: string };
+
+type Section = {
+  documentId: string;
+  title: string;
+  description?: string;
+  items: { id: string; label: string }[];
+};
 
 export type Service = {
   documentId: string;
+  cardDescription: string;
   title: string;
   price: number;
   groupPrice: number;
-  description: string;
   slug: string;
   badges: Badge[];
-  details: Detail[];
-  outcomes: Outcome[];
   image: Image;
+  pageDetails: PageDetails;
+};
+
+export type PageDetails = {
+  intro: string;
+  cta: string;
+  description: string;
+  why?: Section;
+  what?: Section;
+  details: Section;
+  outcomes: Section;
 };
 
 type GetServiceBySlugResponse = {
@@ -48,19 +62,47 @@ export const getServiceBySlug = async (
         title
         price
         groupPrice
-        description
         slug
         badges {
           documentId
           label
         }
-        details {
-          id
-          label
-        }
-        outcomes {
-          id
-          label
+        pageDetails {
+          intro
+          cta
+          description
+          why {
+            title
+            description
+            items {
+              id
+              label
+            }
+          }
+          what {
+            title
+            description
+            items {
+              id
+              label
+            }
+          }
+
+          details {
+            title
+            items {
+              id
+              label
+            }
+          }
+
+          outcomes {
+            title
+            items {
+              id
+              label
+            }
+          }
         }
       }
     }

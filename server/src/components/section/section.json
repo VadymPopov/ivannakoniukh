@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_section_sections",
+  "info": {
+    "displayName": "Section with description",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "arrays.string-array",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

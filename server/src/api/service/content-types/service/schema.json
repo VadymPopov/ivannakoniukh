@@ -36,7 +36,7 @@
         }
       }
     },
-    "description": {
+    "cardDescription": {
       "type": "text",
       "required": true,
       "pluginOptions": {
@@ -78,31 +78,16 @@
         }
       }
     },
-    "details": {
-      "type": "component",
-      "repeatable": true,
-      "component": "arrays.string-array",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "outcomes": {
-      "type": "component",
-      "repeatable": true,
-      "component": "arrays.string-array",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "badges": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::badge.badge",
       "inversedBy": "services"
+    },
+    "pageDetails": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.full-details"
     }
   }
 }

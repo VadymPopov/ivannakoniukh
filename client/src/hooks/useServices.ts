@@ -14,7 +14,7 @@ export const useServices = (locale: string) => {
         title
         price
         groupPrice
-        description
+        cardDescription
         slug
         badges {
           documentId

@@ -32,6 +32,8 @@ export default function MyPathSection() {
             <p>{RichText('description.paragraph1')}</p>
             <p>{RichText('description.paragraph2')}</p>
             <p>{RichText('description.paragraph3')}</p>
+            <p>{RichText('description.paragraph4')}</p>
+            <p className="font-semibold">{t('action')}</p>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 md:hidden">

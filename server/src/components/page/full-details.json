@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_page_full_details",
+  "info": {
+    "displayName": "Full Details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "intro": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "why": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.section"
+    },
+    "what": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.section"
+    },
+    "details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.collection"
+    },
+    "outcomes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.collection"
+    }
+  }
+}

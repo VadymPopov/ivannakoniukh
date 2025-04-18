@@ -42,7 +42,15 @@ function ServiceCards() {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
       {services.map(
-        ({ title, price, groupPrice, description, slug, image, badges }) => (
+        ({
+          title,
+          price,
+          groupPrice,
+          cardDescription,
+          slug,
+          image,
+          badges,
+        }) => (
           <Card
             key={slug}
             className="relative flex h-full flex-col justify-between overflow-hidden pt-0 transition-colors hover:cursor-pointer hover:shadow-2xl"
@@ -74,7 +82,7 @@ function ServiceCards() {
                   {title}
                 </CardTitle>
                 <CardDescription className="text-justify">
-                  {description}
+                  {cardDescription}
                 </CardDescription>
               </CardContent>
             </div>

@@ -51,8 +51,8 @@
     "subtitle": "Start your journey to a better life today",
     "title": "About me",
     "description": {
-      "0": "With over a decade of exploring psychology and more than two years of deep energy work, including tantric practices and Kundalini energy, I’ve transformed my own life and found my true purpose:guiding others toward healing and growth.",
-      "1": "My clients often share how comfortable and natural it feels to open up to me, even in our very first session. They experience deep shifts, uncover simple yet powerful solutions to their challenges, and witness real, positive changes in their lives.Even a single session can provide clarity, balance, and a fresh outlook where you get rid of your blockages that stop you in life."
+      "paragraph1": "With over a decade of exploring psychology and more than two years of deep energy work, including tantric practices and Kundalini energy, I’ve transformed my own life and found my true purpose:guiding others toward healing and growth.",
+      "paragraph2": "My clients often share how comfortable and natural it feels to open up to me, even in our very first session. They experience deep shifts, uncover simple yet powerful solutions to their challenges, and witness real, positive changes in their lives. Even a single session can provide clarity, balance, and a fresh outlook where you get rid of your blockages that stop you in life."
     },
     "action": "Are you ready to step into a better version of yourself? Let’s begin this journey together."
   },
@@ -64,8 +64,11 @@
 
       "paragraph2": "But my journey didn’t stop there. As I grew, I sensed deeper blockages—layers of emotions and patterns that still held me back. That’s when <strong>energy work</strong> found me. I immersed myself in <strong>breathwork</strong>, <strong>tantric breathing</strong>, <strong>tantric diamond healing</strong>, <strong>Kundalini energy activation</strong>, and other transformative practices. This was the missing piece—the connection between the body, energy, and unconscious mind.",
 
-      "paragraph3": "Now, I bring this powerful combination to my clients. You can work <strong>through the body</strong> with energy practices like Tantra and Kundalini, or you can work <strong>through the unconscious</strong> with quantum psychology. But when you merge both, the results are profound. This unique integration has not only transformed me—from someone afraid to stand up for herself to building a business in a foreign country—but has also helped my clients achieve rapid and lasting breakthroughs."
-    }
+      "paragraph3": "Now, I bring this powerful combination to my clients. You can work <strong>through the body</strong> with energy practices like Tantra and Kundalini, or you can work <strong>through the unconscious</strong> with quantum psychology. But when you merge both, the results are profound. This unique integration has not only transformed me—from someone afraid to stand up for herself to building a business in a foreign country—but has also helped my clients achieve rapid and lasting breakthroughs.",
+
+      "paragraph4": "Healing doesn’t have to take years. You don’t have to stay stuck in old patterns. Even after just one session, you can feel a shift. Your external world reflects your internal state, and you attract not what you think, but what you feel. My mission is to help you align with your true self—to find balance, energy, clarity, confidence, and self-honesty. Because without honesty with yourself, nothing in life is truly real."
+    },
+    "action": "Are you ready to step into your power?"
   },
   "ServicesSection": {
     "subtitle": "Elevate Your Well-Being",
@@ -84,8 +87,6 @@
     "button": "Book now"
   },
   "ServicePage": {
-    "detailsTitle": "What You'll Get:",
-    "outcomeTitle": "Expected Outcomes:",
     "price": "Price:",
     "badge": { "individual": "individual", "group": "group" },
     "button": "Book now"

@@ -54,12 +54,11 @@ function EventsCards() {
                 </CardDescription>
                 <CardDescription className="flex items-center gap-2">
                   <FaCalendar />
-                  {format(event.date, 'MMM do, yyyy')},{' '}
-                  {event.time && event.time.substring(0, 5)}
+                  {format(event.date, 'MMMM dd, yyyy')}
                 </CardDescription>
                 <CardDescription className="flex items-center gap-2">
-                  <FaClock />
-                  {event.duration} {t('duration')}
+                  <FaClock /> {event.time && event.time.substring(0, 5)} (
+                  {event.duration} {t('duration')})
                 </CardDescription>
                 <CardDescription className="flex items-center gap-2">
                   <FaMapMarkerAlt />
