@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 
 import {
@@ -13,7 +12,6 @@ import {
 import { cn } from '@/lib/utils';
 
 export default function Navbar() {
-  const pathname = usePathname();
   const locale = useLocale();
   const t = useTranslations('Navbar');
   const navItems = t.raw('items') as {
@@ -29,11 +27,7 @@ export default function Navbar() {
           <NavigationMenuItem key={key}>
             <Link href={`${locale}/${href}`} passHref legacyBehavior>
               <NavigationMenuLink
-                className={cn(
-                  'rounded-md px-4 py-2 uppercase transition-colors',
-                  'text-[#cba590] hover:bg-[#cba590]/20 hover:text-white',
-                  pathname === href && 'bg-[#cba590]/30 text-white',
-                )}
+                className={cn('rounded-md px-4 py-2 uppercase')}
               >
                 {label}
               </NavigationMenuLink>

@@ -4,37 +4,6 @@ import { useTranslations } from 'next-intl';
 
 import Title from '../ui/title';
 
-// const cards = [
-//   {
-//     icon: <FaSpa className=' text-3xl' />,
-//     title: "Transformational Healing",
-//     description:
-//       "Experience profound healing and energy shifts that bring balance to your life.",
-//     image: "/healing-one.svg",
-//   },
-//   {
-//     icon: <FaBattleNet className=' text-3xl' />,
-//     title: "Holistic Approach",
-//     description:
-//       "A personalized healing journey addressing mind, body, and soul for total well-being.",
-//     image: "/healing-two.svg",
-//   },
-//   {
-//     icon: <FaMountain className=' text-3xl' />,
-//     title: "Personal Growth",
-//     description:
-//       "Unlock your full potential and overcome obstacles with guided support.",
-//     image: "/healing-three.svg",
-//   },
-//   {
-//     icon: <FaFlask className=' text-3xl' />,
-//     title: "Scientifically Proven Techniques",
-//     description:
-//       "Benefit from healing methods backed by research and energy science.",
-//     image: "/healing-four.svg",
-//   },
-// ];
-
 const icons = [
   <FaSpa key="FaSpa" className="text-3xl" />,
   <FaBattleNet key="FaBattleNet" className="text-3xl" />,
@@ -50,11 +19,15 @@ export default function StepsCards() {
           key={index}
           className="flex flex-col justify-between rounded-lg bg-gradient-to-b from-[#0f5132] via-[rgba(15,81,50,0.9)] to-[rgba(15,81,50,0.7)] p-6 text-center shadow-md backdrop-blur-lg transition-all duration-300 hover:bg-[#0f5132]"
         >
-          <div className="mb-4 flex justify-center text-[#cba590]">{icon}</div>
-          <Title level="h3" className="text-lg text-white">
+          <div className="text-navbar-primary mb-4 flex justify-center">
+            {icon}
+          </div>
+          <Title level="h3" className="text-foreground-light text-lg">
             {t(`${index}.title`)}
           </Title>
-          <p className="mt-2 text-white">{t(`${index}.description`)}</p>
+          <p className="text-foreground-light mt-2">
+            {t(`${index}.description`)}
+          </p>
         </div>
       ))}
     </div>

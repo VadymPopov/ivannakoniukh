@@ -23,7 +23,7 @@ const links = [
 export default function Header() {
   const locale = useLocale();
   return (
-    <header className="fixed z-50 flex w-full flex-col items-center justify-between gap-2.5 bg-[#0f5132] px-6 py-4 md:flex-row md:px-16 lg:px-20">
+    <header className="bg-background fixed z-50 flex w-full flex-col items-center justify-between gap-2.5 px-6 py-4 md:flex-row md:px-16 lg:px-20">
       <div className="flex flex-col items-center gap-2.5 md:flex-row lg:gap-8">
         <Link href={`/${locale}`}>
           {' '}
@@ -34,7 +34,7 @@ export default function Header() {
       </div>
 
       <div className="flex items-center gap-5">
-        <ul className="flex gap-4 text-[#cba590]">
+        <ul className="text-navbar-primary flex gap-4">
           {links.map(({ href, icon, label }) => (
             <Link
               key={label}

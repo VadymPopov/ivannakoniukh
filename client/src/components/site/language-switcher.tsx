@@ -31,7 +31,7 @@ const LanguageSwitcher = () => {
 
   return (
     <Select value={locale} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="border border-[#cba590] text-[#cba590] uppercase hover:bg-white hover:text-black">
+      <SelectTrigger className="border-navbar-primary text-navbar-primary border uppercase hover:bg-transparent hover:text-white">
         <span>{locale === 'en' ? 'en' : 'uk'}</span>
       </SelectTrigger>
       <SelectContent>

@@ -12,8 +12,8 @@ export default function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer className="bg-[#0f5132] text-white">
-      <div className="grid items-start gap-10 border-b border-white px-6 pt-24 pb-14 md:grid-cols-3 md:px-16 lg:px-20">
+    <footer className="bg-background text-foreground-light">
+      <div className="border-foretext-foreground-light grid items-start gap-10 border-b px-6 pt-24 pb-14 md:grid-cols-3 md:px-16 lg:px-20">
         <div className="flex flex-col items-center sm:items-start">
           <Link href={`/${locale}`}>
             <Image

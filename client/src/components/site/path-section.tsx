@@ -13,13 +13,21 @@ export default function MyPathSection() {
     });
 
   return (
-    <Section bgColor="bg-[#d9e8e5] md:bg-[url(/path-bg-lg.png)] bg-no-repeat bg-contain bg-bottom md:bg-right relative">
+    <Section
+      bgColor="bg-background-secondary"
+      styles="md:min-h-[calc(100vh-86px)] md:bg-[url(/path-bg-lg.png)] bg-no-repeat bg-contain bg-bottom md:bg-[right_200px_top_0px] relative"
+    >
       <div className="flex justify-center pb-[600px] md:grid md:grid-cols-12 md:pb-0">
         <div className="col-span-7 col-start-1">
-          <Title level="h3" className="mb-5 text-lg font-normal text-[#2997aa]">
+          <Title
+            level="h3"
+            className="text-title-secondary mb-5 text-lg font-normal"
+          >
             {t('subtitle')}
           </Title>
-          <Title className="mb-5 text-[#205b4f] uppercase">{t('title')}</Title>
+          <Title className="text-title-primary mb-5 uppercase">
+            {t('title')}
+          </Title>
           <div className="flex max-w-2xl flex-col gap-2.5 text-justify">
             <p>{RichText('description.paragraph1')}</p>
             <p>{RichText('description.paragraph2')}</p>

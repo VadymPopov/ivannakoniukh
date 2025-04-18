@@ -23,17 +23,17 @@ export default async function ServicePage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-[length:50%_auto] bg-[position:150%_50%] bg-no-repeat bg-origin-content pt-[178px] font-[family-name:var(--font-geist-sans)] md:bg-[url(/bg.png)] md:pt-[86px]">
-      <main className="mx-auto max-w-2xl p-6 text-justify">
+    <div className="bg-background-light min-h-screen bg-[length:50%_auto] bg-[position:150%_50%] bg-no-repeat bg-origin-content pt-[178px] font-[family-name:var(--font-geist-sans)] md:bg-[url(/bg.png)] md:pt-[86px]">
+      <main className="max-w-3xl p-6 text-justify lg:ml-20 xl:max-w-4xl">
         <Section>
-          <Title className="mb-5 text-[#205b4f] uppercase">
+          <Title className="text-background mb-5 uppercase">
             {service.title}
           </Title>
           <p className="mb-4">{service.description}</p>
 
           <Title
             level="h3"
-            className="mb-4 text-xl font-semibold text-[#205b4f] uppercase"
+            className="text-background mb-4 text-xl font-semibold uppercase"
           >
             {t('detailsTitle')}
           </Title>
@@ -45,7 +45,7 @@ export default async function ServicePage({ params }: Props) {
 
           <Title
             level="h3"
-            className="mb-4 text-xl font-semibold text-[#205b4f] uppercase"
+            className="text-background mb-4 text-xl font-semibold uppercase"
           >
             {t('outcomeTitle')}
           </Title>

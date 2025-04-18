@@ -25,29 +25,31 @@ export default async function EventPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-[length:50%_auto] bg-[position:150%_50%] bg-no-repeat bg-origin-content pt-[178px] font-[family-name:var(--font-geist-sans)] md:bg-[url(/bg.png)] md:pt-[86px]">
-      <main className="mx-auto max-w-2xl p-6 text-justify">
+    <div className="bg-background-light min-h-screen bg-[length:50%_auto] bg-[position:150%_50%] bg-no-repeat bg-origin-content pt-[178px] font-[family-name:var(--font-geist-sans)] md:bg-[url(/bg.png)] md:pt-[86px]">
+      <main className="mx-auto max-w-3xl p-6 text-justify lg:ml-20 xl:max-w-4xl">
         <Section>
-          <Title className="mb-5 text-[#205b4f] uppercase">{event.title}</Title>
+          <Title className="text-background mb-5 uppercase">
+            {event.title}
+          </Title>
           <p className="mb-4">{event.description}</p>
 
           <Title
             level="h3"
-            className="mb-4 text-xl font-semibold text-[#205b4f] uppercase"
+            className="text-background mb-4 text-xl font-semibold uppercase"
           >
             {t('title')}
           </Title>
 
           <div className="mb-4 flex flex-col gap-2">
-            <p className="flex items-center gap-2 text-black">
+            <p className="flex items-center gap-2">
               <FaCalendar />
               {format(event.date, 'MMM do, yyyy')}, {event.time.substring(0, 5)}
             </p>
-            <p className="flex items-center gap-2 text-black">
+            <p className="flex items-center gap-2">
               <FaClock />
               {event.duration} {t('duration')}
             </p>
-            <p className="flex items-center gap-2 text-black">
+            <p className="flex items-center gap-2">
               <FaMapMarkerAlt />
               {event.location}
             </p>

@@ -49,17 +49,19 @@ function EventsCards() {
                 {event.title}
               </CardTitle>
               <div className="flex flex-col gap-2">
-                <CardDescription>{event.description}</CardDescription>
-                <CardDescription className="flex items-center gap-2 text-black">
+                <CardDescription className="text-muted-foreground">
+                  {event.description}
+                </CardDescription>
+                <CardDescription className="flex items-center gap-2">
                   <FaCalendar />
                   {format(event.date, 'MMM do, yyyy')},{' '}
                   {event.time && event.time.substring(0, 5)}
                 </CardDescription>
-                <CardDescription className="flex items-center gap-2 text-black">
+                <CardDescription className="flex items-center gap-2">
                   <FaClock />
                   {event.duration} {t('duration')}
                 </CardDescription>
-                <CardDescription className="flex items-center gap-2 text-black">
+                <CardDescription className="flex items-center gap-2">
                   <FaMapMarkerAlt />
                   {event.location}
                 </CardDescription>
@@ -89,12 +91,20 @@ function EventsCards() {
 export default function EventsSection() {
   const t = useTranslations('EventsSection');
   return (
-    <Section bgColor="bg-[#d9e8e5] h-screen" id="events">
+    <Section
+      bgColor="bg-background-secondary md:min-h-[calc(100vh-86px)]"
+      id="events"
+    >
       <div className="mx-auto max-w-2xl text-center">
-        <Title level="h3" className="mb-5 text-lg font-normal text-[#2997aa]">
+        <Title
+          level="h3"
+          className="text-title-secondary mb-5 text-lg font-normal"
+        >
           {t('subtitle')}
         </Title>
-        <Title className="mb-5 text-[#205b4f] uppercase">{t('title')}</Title>
+        <Title className="text-title-primary mb-5 uppercase">
+          {t('title')}
+        </Title>
       </div>
 
       <EventsCards />

@@ -38,6 +38,7 @@ function ServiceCards() {
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
   };
+
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
       {services.map(
@@ -104,12 +105,17 @@ function ServiceCards() {
 export default function ServicesSection() {
   const t = useTranslations('ServicesSection');
   return (
-    <Section bgColor="bg-white" id="services">
+    <Section bgColor="bg-background-light" id="services">
       <div className="mx-auto max-w-2xl text-center">
-        <Title level="h3" className="mb-5 text-lg font-normal text-[#2997aa]">
+        <Title
+          level="h3"
+          className="text-title-secondary mb-5 text-lg font-normal"
+        >
           {t('subtitle')}
         </Title>
-        <Title className="mb-5 text-[#205b4f] uppercase">{t('title')}</Title>
+        <Title className="text-title-primary mb-5 uppercase">
+          {t('title')}
+        </Title>
       </div>
 
       <ServiceCards />

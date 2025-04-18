@@ -8,12 +8,17 @@ import StepsCards from './steps-cards';
 export default function StepsSection() {
   const t = useTranslations('StepsSection');
   return (
-    <Section bgColor="bg-white" id="about">
+    <Section bgColor="bg-background-light" id="about">
       <div className="mx-auto max-w-2xl text-center">
-        <Title level="h3" className="mb-5 text-lg font-normal text-[#2997aa]">
+        <Title
+          level="h3"
+          className="text-title-secondary mb-5 text-lg font-normal"
+        >
           {t('subtitle')}
         </Title>
-        <Title className="mb-5 text-[#205b4f] uppercase">{t('title')}</Title>
+        <Title className="text-title-primary mb-5 text-3xl uppercase sm:text-4xl">
+          {t('title')}
+        </Title>
       </div>
       <StepsCards />
     </Section>

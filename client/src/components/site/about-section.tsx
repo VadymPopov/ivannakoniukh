@@ -9,19 +9,25 @@ export default function AboutSection() {
   const t = useTranslations('AboutSection');
   return (
     <Section
-      bgColor="bg-white md:bg-[url(/about-bg-lg.png)] bg-no-repeat bg-contain bg-bottom md:bg-left relative"
+      bgColor="bg-background-light"
+      styles="md:bg-[url(/about-bg-lg.png)] bg-no-repeat bg-contain bg-bottom md:bg-[left_200px_top_0px] relative"
       id="about"
     >
       <div className="flex justify-center pb-[600px] md:grid md:grid-cols-12 md:pb-0">
         <div className="col-span-7 col-start-6">
-          <Title level="h3" className="mb-5 text-lg font-normal text-[#2997aa]">
+          <Title
+            level="h3"
+            className="text-title-secondary mb-5 text-lg font-normal"
+          >
             {t('subtitle')}
           </Title>
-          <Title className="mb-5 text-[#205b4f] uppercase">{t('title')}</Title>
+          <Title className="text-title-primary mb-5 uppercase">
+            {t('title')}
+          </Title>
           <div className="flex max-w-2xl flex-col gap-2.5 text-justify">
             <p>{t('description.0')}</p>
             <p>{t('description.1')}</p>
-            <p className="font-semibold text-[#212529]">{t('action')}</p>
+            <p className="font-semibold">{t('action')}</p>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 md:hidden">
